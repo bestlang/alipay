@@ -70,6 +70,9 @@ class AntCertificationUtil
      */
     function hex2dec($hex)
     {
+        if(substr($hex, 0, 2) === '0x'){
+            $hex = substr($hex, 2);
+        }
         $dec = 0;
         $len = strlen($hex);
         for ($i = 1; $i <= $len; $i++) {
